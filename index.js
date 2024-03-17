@@ -27,6 +27,8 @@ multiFilesInput.onchange = ()=>{
     }
 
 }
+
+//testttt
 document.getElementById('uplBtn').onclick = () =>{ //upload button clicking
     let currentFilesSize = 0;
     for (let i = 0; i < multiFilesInput.files.length; i++) {
