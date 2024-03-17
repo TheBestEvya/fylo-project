@@ -1,10 +1,10 @@
 const totalSize = 100000000
-var sizeAvailable;
-var storageUsage;
+let sizeAvailable;
+let storageUsage;
 localLoad();
 const imgRege =new RegExp( /\.(gif|jpe?g|png|)$/i);
 
-var multiFilesInput = document.getElementById('mult-img-input')     //multiple images input element
+let multiFilesInput = document.getElementById('mult-img-input')     //multiple images input element
 multiFilesInput.onchange = ()=>{
     let currentFilesSize = 0;
     let err= false;
@@ -25,6 +25,7 @@ multiFilesInput.onchange = ()=>{
         document.getElementById('count').innerHTML = multiFilesInput.files.length+ " Files"
         document.getElementById('file-size').innerHTML = (currentFilesSize/1000000).toFixed(2) + " MB"
     }
+
 }
 document.getElementById('uplBtn').onclick = () =>{ //upload button clicking
     let currentFilesSize = 0;
@@ -48,8 +49,9 @@ function updateStorage(){
     let span = document.createElement('span')
     span.innerText = "MB left"
     document.getElementById('storage-usage').innerHTML = (storageUsage/1000000).toFixed(2)+" MB"
-    document.getElementById('storage-available').innerHTML = (sizeAvailable/1000000).toFixed(0)+" "
-    document.getElementById('storage-available').append(span)
+    let storageDiv= document.getElementById('storage-available')
+    storageDiv.innerHTML = (sizeAvailable/1000000).toFixed(0)+" "
+    storageDiv.append(span)
     document.getElementsByClassName('gradient-bar')[0].style.width=progressBarPercent+"%"
     
 }
