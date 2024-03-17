@@ -7,8 +7,8 @@
     <meta name="keywords" content="Fylo data storage component, Frontend Mentor">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="styles.css" rel="stylesheet">
-    </link>
+    <link href="styles.css" rel="stylesheet"></link>
+    
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
     <title>Fylo data storage component</title>
 </head>
@@ -20,19 +20,31 @@
             <img class="logo" src="images/logo.svg" alt="Fylo logo" />
             <section class="icons">
                 <div class="icon-img">
-                    <img src="images/icon-document.svg" alt="" aria-hidden="true" />
+                    <button id="folBtn" class="icon-img">
+                        <label for="mult-img-input">
+                            <img src="images/icon-folder.svg" alt="" aria-hidden="true" />
+                            <span>select</span> 
+                        </label>
+                        <input id="mult-img-input" type="file" accept="image/*" multiple>
+                    </button>
                 </div>
                 <div class="icon-img">
-                    <img src="images/icon-folder.svg" alt="" aria-hidden="true" />
+                    <button id="uplBtn" class="icon-img">
+                        <img src="images/icon-upload.svg" alt="" aria-hidden="true" />
+                        <span>upload</span>
+                    </button>
                 </div>
-                <div class="icon-img">
-                    <img src="images/icon-upload.svg" alt="" aria-hidden="true" />
+            </section>
+            <section>
+                <div class="files">
+                    <div id="count"></div>
+                    <div id="file-size"></div>
                 </div>
             </section>
         </section>
         <!-- Storage Container -->
         <section class="storage-container">
-            <h1>You've used <span>815 MB</span> of your storage</h1>
+            <h1>You've used <span id="storage-usage"></span> of your storage</h1>
             <!-- Progress Bar -->
             <section class="progress-bar">
                 <div class="gradient-bar">
@@ -47,10 +59,10 @@
             </h2>
             <!-- GB left -->
             <section class="gb-left">
-                <p>185 <span>MB left</span></p>
+                <p id="storage-available"></p>
             </section>
         </section>
     </main>
 </body>
-
+<script src="index.js"></script>
 </html>
